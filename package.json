@@ -3,11 +3,12 @@
   "version": "2.0.0",
   "private": true,
   "scripts": {
+    "start": "yarn run serve",
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "yarn run build:service-worker && vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/locales/**/*.json'",
-    "start": "yarn run serve"
+    "build:service-worker": "workbox generateSW workbox-config.js",
+    "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/locales/**/*.json'"
   },
   "dependencies": {
     "@bugsnag/js": "^7.5.1",
@@ -57,7 +58,8 @@
     "vue-cli-plugin-pug": "~1.0.7",
     "vue-cli-plugin-vuetify": "~2.0.7",
     "vue-template-compiler": "^2.6.12",
-    "vuetify-loader": "^1.6.0"
+    "vuetify-loader": "^1.6.0",
+    "workbox-cli": "^5.1.4"
   },
   "_id": "daru.me-vue@0.1.0",
   "gitHooks": {
