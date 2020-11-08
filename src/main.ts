@@ -14,6 +14,7 @@ Vue.use(VueMoment);
 Vue.config.productionTip = false;
 
 new Vue({
+  name: process.env.VUE_APP_NAME,
   router,
   store,
   vuetify,
