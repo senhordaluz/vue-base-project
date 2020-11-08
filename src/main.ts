@@ -11,7 +11,21 @@ import VueMoment from "vue-moment";
 
 Vue.use(VueMoment);
 
-Vue.config.productionTip = false;
+switch (process.env.NODE_ENV) {
+  case "local":
+  case "docker":
+  case "development":
+    Vue.config.productionTip = false;
+    Vue.config.devtools = true;
+    Vue.config.performance = true;
+    Vue.config.silent = false;
+    break;
+  default:
+    Vue.config.devtools = false;
+    Vue.config.performance = false;
+    Vue.config.silent = true;
+    break;
+}
 
 new Vue({
   name: process.env.VUE_APP_NAME,
