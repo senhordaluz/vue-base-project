@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-ignore */
 import Vue from "vue";
 // @ts-ignore
-import VueLocalforage from "@storage-js/vue-localforage";
+import VueLocalforage from "v-localforage";
 import localforage from "localforage";
 // @ts-ignore
 import memoryDriver from "localforage-memoryStorageDriver";

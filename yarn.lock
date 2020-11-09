@@ -1057,13 +1057,6 @@
   resolved "https://registry.npm.taobao.org/@soda/get-current-script/download/@soda/get-current-script-1.0.2.tgz#a53515db25d8038374381b73af20bb4f2e508d87"
   integrity sha1-pTUV2yXYA4N0OBtzryC7Ty5QjYc=
 
-"@storage-js/vue-localforage@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@storage-js/vue-localforage/-/vue-localforage-1.0.0.tgz#d87eee9a072217c080111836c4fd41bfbc5af895"
-  integrity sha512-ITp+5jn4PSvZMahbZOXavcW2tenff6U7uGUa5eU3ZTa3O+8suj+UKAIRiTeG74Nxwt0qu00q4a5gCzl3Va3hIA==
-  dependencies:
-    localforage "^1.7.3"
-
 "@surma/rollup-plugin-off-main-thread@^1.1.1":
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/@surma/rollup-plugin-off-main-thread/-/rollup-plugin-off-main-thread-1.4.1.tgz#bf1343e5a926e5a1da55e3affd761dda4ce143ef"
@@ -10569,6 +10562,13 @@ uuid@^3.3.2, uuid@^3.4.0:
   version "3.4.0"
   resolved "https://registry.npm.taobao.org/uuid/download/uuid-3.4.0.tgz?cache=0&sync_timestamp=1601826877751&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fuuid%2Fdownload%2Fuuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
   integrity sha1-sj5DWK+oogL+ehAK8fX4g/AgB+4=
+
+v-localforage@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/v-localforage/-/v-localforage-2.0.1.tgz#2062fde2f5f913dc3eeb40d8b18c91310d50066a"
+  integrity sha512-C6WOOdG+Q6VD89k2WAsfetmKG+3NYgZIOUAR9YH5AMY782ifXsPMB6VrvLFyWdi7aiq4sz2y+mDKeY2Y2155yw==
+  dependencies:
+    localforage "^1.7.3"
 
 v8-compile-cache@^2.0.3:
   version "2.2.0"
