@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-ignore */
 import Vue from "vue";
+import "./plugins/cookies";
+import "./plugins/localforage";
 import "./plugins/axios";
 import "./plugins/bugsnag";
 import App from "./App.vue";
