@@ -1,3 +1,7 @@
 {
-  "message": "hello i18n !!"
+  "message": "hello i18n !!",
+  "home": "Home",
+  "services": "Services",
+  "portfolio": "Portfolio",
+  "contact": "Contact"
 }

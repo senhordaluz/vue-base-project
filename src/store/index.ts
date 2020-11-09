@@ -6,7 +6,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    darkMode: false
+    darkMode: window.matchMedia("(prefers-color-scheme: dark)").matches || false
   },
   getters: {
     getDarkMode(state) {
@@ -24,7 +24,9 @@ export default new Vuex.Store({
   actions: {
     async updateCachedMode(store) {
       const storedDarkMode: boolean =
-        (await forageStorage.getItem("darkMode")) || store.state.darkMode;
+        (await forageStorage.getItem("darkMode")) ||
+        window.matchMedia("(prefers-color-scheme: dark)").matches ||
+        store.state.darkMode;
       store.commit("setDarkMode", storedDarkMode);
       await forageStorage.setItem("darkMode", storedDarkMode);
     },

@@ -1,6 +1,32 @@
 <template lang="pug">
 v-app
+
+  v-navigation-drawer(
+    app,
+    v-model="drawer",
+    absolute,
+    temporary,
+    :dark="darkMode"
+  )
+    v-list(
+      dense,
+      rounded,
+      :dark="darkMode"
+    )
+      v-list-item(
+        v-for="item in menuItems",
+        :key="item.title",
+        :href="item.href",
+        :dark="darkMode",
+        link
+      )
+        v-list-item-icon
+          v-icon(:dark="darkMode") {{ item.icon }}
+        v-list-item-content
+          v-list-item-title {{ item.title }}
+        
   v-app-bar(app, color="primary", dark)
+    v-app-bar-nav-icon.d-flex.d-sm-none(@click.stop="drawer = !drawer")
     .d-flex.align-center
       v-img.shrink.mr-2(
         alt="Vuetify Logo",
@@ -53,6 +79,27 @@ export default class App extends Vue {
   darkMode!: boolean;
   @Action("changeMode") changeMode!: Function;
   @Action("updateCachedMode") updateCachedMode!: Function;
+
+  drawer = false;
+
+  menuItems = [
+    {
+      title: (this as any).$t("home"),
+      icon: "mdi-view-dashboard",
+      href: "#home"
+    },
+    {
+      title: (this as any).$t("services"),
+      icon: "mdi-cart",
+      href: "#services"
+    },
+    {
+      title: (this as any).$t("portfolio"),
+      icon: "mdi-clipboard-multiple",
+      href: "#portfolio"
+    },
+    { title: (this as any).$t("contact"), icon: "mdi-forum", href: "#contact" }
+  ];
 
   async created() {
     await this.updateCachedMode();
