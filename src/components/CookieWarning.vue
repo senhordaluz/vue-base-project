@@ -48,7 +48,7 @@ export default class CookieWarning extends Vue {
     "decline-cookie": "Decline"
   },
   "pt-BR": {
-    "message": "Este site utiliza cookies para garantiar uma melhor experiência.",
+    "message": "Este site utiliza cookies para garantir uma melhor experiência.",
     "confirm-cookie": "Aceitar!",
     "decline-cookie": "Recusar"
   }
