@@ -30,16 +30,33 @@ v-app
       
   v-main
     HelloWorld
+
+  footer
+    CookieWarning(button-decline=false)
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue, ProvideReactive } from "vue-property-decorator";
 import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
+import CookieWarning from "@/components/CookieWarning.vue"; // @ is an alias to /src
+import { State, Getter, Action, Mutation, namespace } from "vuex-class";
 
 @Component({
   components: {
+    CookieWarning,
     HelloWorld
   }
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  @Getter("getDarkMode")
+  @ProvideReactive("darkMode")
+  darkMode!: boolean;
+  @Action("changeMode") changeMode!: Function;
+  @Action("updateCachedMode") updateCachedMode!: Function;
+
+  async created() {
+    await this.updateCachedMode();
+    // await this.changeMode();
+  }
+}
 </script>

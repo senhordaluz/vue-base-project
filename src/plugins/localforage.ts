@@ -6,12 +6,14 @@ import localforage from "localforage";
 // @ts-ignore
 import memoryDriver from "localforage-memoryStorageDriver";
 
-const Options = {
+const Options: LocalForageOptions = {
   // Prefix all storage keys to prevent conflicts
   name: `${(process.env.VUE_APP_NAME as string)
     .replace(/\s+/g, "-")
     .toLowerCase()}-vue-localforage`,
-  version: process.env.VUE_APP_VERSION,
+  version: parseInt(
+    (process.env.VUE_APP_VERSION as string).split(".").join("")
+  ),
   driver: [
     localforage.INDEXEDDB,
     localforage.WEBSQL,
@@ -31,3 +33,7 @@ const Options = {
 
 // you can also pass options, check options reference below
 Vue.use(VueLocalforage, Options);
+
+// Create `localforage` instance
+const forageStore = localforage.createInstance(Options);
+export default forageStore;

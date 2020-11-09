@@ -11,7 +11,7 @@ const forageStore = localforage.createInstance({
   name: `${(process.env.VUE_APP_NAME || "")
     .replace(/\s+/g, "-")
     .toLowerCase()}-axios-cache`,
-  version: process.env.VUE_APP_VERSION,
+  version: parseInt(process.env.VUE_APP_VERSION.split(".").join("")),
   driver: [
     localforage.INDEXEDDB,
     localforage.WEBSQL,
