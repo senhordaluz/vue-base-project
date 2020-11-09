@@ -45,6 +45,10 @@ module.exports = {
     }
   },
 
+  /**
+   * Go to https://realfavicongenerator.net/
+   * for customization
+   */
   pwa: {
     name: process.env.VUE_APP_NAME,
     theme_color: process.env.VUE_APP_THEME_COLOR,
